@@ -1,0 +1,263 @@
+body {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235, 234, 245);
+}
+
+h1{
+    color: rgb(235, 234, 245);
+    margin: 0;
+    width: fit-content;
+}
+
+h2{
+    color: rgb(95, 111, 160);
+    text-align: center;
+    margin: 0;
+}
+
+h3, label{
+    color: rgb(95, 111, 160);
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    background-color: rgb(95, 111, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* align-items berhasil membuat section ketengah secara horizontal karena flex-direction column ikut mengubah arah sumbu main axisnya jadi vertikal */
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    /* border: 1px solid red; */
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 1px #9f9fd2;
+    border-radius: 5px;
+    width: 60%;
+    padding: 30px 0;
+    gap: 30px;
+    align-items: center;
+}
+
+#khususSearch {
+    gap: 0;
+}
+
+#khususSearch > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+}
+
+#khususSearch > div:first-child {
+    padding: 0 0 20px 0;
+}
+
+#hasil-temuan-container {
+    padding-top: 30px;
+    gap: 0;
+}
+
+#hasil-temuan-container > p {
+    padding: 0;
+    margin: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+#bookForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#bookForm div {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    background-color: rgb(207, 207, 235);
+    color: rgb(95, 111, 160);
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+}
+
+#bookForm div #bookFormIsComplete {
+    width: fit-content;
+}
+
+#bookFormSubmit, #searchSubmit {
+    background-color: rgb(95, 111, 160);
+    color: rgb(235, 234, 245);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+#bookFormSubmit:hover, #searchSubmit:hover {
+    background-color: #6082cb;
+    color: rgb(235, 234, 245);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 2px #9f9fd2;
+}
+
+#bookFormSubmit:active, #searchSubmit:active {
+    background-color: #9f9fd2;
+    transform: translateY(2px);
+    box-shadow: none;
+    cursor: pointer;
+}
+
+#searchBooks {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+#searchBooks input {
+    width: 100%;
+}
+
+
+/* Book list Section */
+
+#incompleteBookList, #completeBookList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.bookCard  {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(207, 207, 235);
+    width: 300px;
+    height: 200px;
+    /* align-items: center; */
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.button-container {
+    /* border: #6082cb 1px solid; */
+    width: 100%;
+    display: flex;
+    gap: 6px;
+    /* align-items: flex-start; */
+}
+
+button {
+    background-color: rgb(95, 111, 160);
+    color: rgb(235, 234, 245);
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 2px #9f9fd2;
+    transition: all 0.2s ease;
+}
+
+button:active {
+    cursor: pointer;
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.readedButton, #bookEditSubmit {
+    background-color: rgb(95, 160, 116);
+}
+
+.unreadButton {
+    background-color: rgb(160, 95, 118);
+}
+
+.editButton, #editCancel {
+    background-color: transparent;
+    border: 2px solid rgb(95, 111, 160);
+    color: rgb(95, 111, 160);
+}
+
+/* open ini adalah attribute HTML yg otomatis ditambahkan browser ke tag <dialog> saat showModal() dipanggil dalam JS*/
+/* aku butuh ini agar ketika menerapkan display, display hanya bisa diterapkan ketika dialog open. jadi tidak acak kidut displaynyaa */
+dialog[open] {
+    border: none;
+    border-radius: 10px;
+    width: 45%;
+    height: 360px;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    background-color: rgb(235, 234, 245);
+}
+
+dialog::backdrop {
+    background: rgba(46, 44, 61, 0.626);;
+}
+
+#editedBookForm {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#editedBookForm div div {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 10px;
+}
+
+#editedBookForm div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#editedBookForm span button {
+    border-radius: 6px;
+    padding: 5px 12px;
+    height: 30px;
+}
+
+hr {
+    width: 80%;
+    border: 1px solid rgb(207, 207, 235);
+}
